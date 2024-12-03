@@ -1,22 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.pages.home.HomeFragment">
+    tools:context=".view.pages.home.HomeFragment"
+    >
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="250dp"
+          android:src="@drawable/rectangle"/>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:padding="16dp">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="HerbaMate"
+                  android:textColor="@color/white"
+                  android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                  android:textStyle="bold"/>
+              <Space
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"/>
+              <ImageButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:background="@null"
+                  android:contentDescription="Favorite Page"
+                  android:src="@drawable/baseline_favorite_24"
+                  app:tint="@color/white" />
+          </LinearLayout>
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="16dp"/>
+          <com.google.android.material.search.SearchBar
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Pencarian"/>
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="16dp"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Fitur Kami"
+              android:textColor="@color/white"
+              android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+              android:textStyle="bold"/>
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="8dp"/>
+          <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              >
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="180dp"
+                  android:orientation="horizontal"
+                  android:padding="16dp"
+                  android:background="@drawable/background_stroke"
+                  >
+                  <ImageView
+                      android:id="@+id/card_feature_image"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:src="@drawable/card_feature"
+                      />
+
+                  <Space
+                      android:layout_width="8dp"
+                      android:layout_height="0dp"/>
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_gravity="center">
+                      <TextView
+                          android:id="@+id/card_feature_title"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                          android:text="Cari Herbal Yang Cocok"
+                          />
+
+                      <TextView
+                          android:id="@+id/card_feature_description"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                          android:text="Ayo cari herbal yang cocok dari gejala penyakit yang kamu alami !"
+                          />
+                  </LinearLayout>
+
+              </LinearLayout>
+          </androidx.cardview.widget.CardView>
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="16dp"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Herbal Populer"
+              android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+              android:textStyle="bold"/>
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="8dp"/>
+          <GridView
+              android:layout_width="match_parent"
+              android:numColumns="2"
+              android:layout_height="wrap_content"
+              android:horizontalSpacing="16dp"
+              android:verticalSpacing="16dp"
+              tools:listitem="@layout/card_grid_herbs"/>
+
+      </LinearLayout>
+  </FrameLayout>
+</ScrollView>
