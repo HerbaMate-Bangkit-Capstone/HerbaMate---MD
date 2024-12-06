@@ -19,6 +19,22 @@
             android:name=".view.pages.detail.DetailActivity"
             android:exported="false" />
         <activity
+            android:name=".view.pages.recommendation_result.RecommendationResultActivity"
+            android:exported="false"
+            />
+        <activity
+            android:name=".view.pages.checker.SymptomCheckerActivity"
+            android:exported="false"
+           />
+        <activity
+            android:name=".view.pages.category.SymptomCategoryActivity"
+            android:exported="false"
+            />
+        <activity
+            android:name=".view.pages.favorite.FavoriteActivity"
+            android:exported="false"
+            />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true"
             android:label="@string/app_name">

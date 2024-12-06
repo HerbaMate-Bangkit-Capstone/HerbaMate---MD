@@ -1,6 +1,46 @@
 <resources>
     <string name="app_name">HerbaMate</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Beranda</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="title_recommendation">Rekomendasi</string>
+    <string name="title_setting">Pengaturan</string>
+    <string name="desc_recommendation1">Temukan solusi herbal yang tepat untuk kesehatan kamu!</string>
+    <string name="desc_recommendation2">Cukup jawab beberapa pertanyaan tentang gejala yang kamu alami, dan kami akan merekomendasikan jenis herbal yang paling sesuai untuk mendukung kesehatan tubuh kamu secara alami. Mulai tes sekarang dan temukan herbal yang cocok untuk kebutuhan kamu!</string>
+    <string name="start">Mulai Tes</string>
+    <string name="other">Lainnya</string>
+    <string name="herbal_favorite">Herbal Favorit</string>
+    <string name="about">Tentang</string>
+    <string name="language">Bahasa</string>
+    <string name="app_about">Tentang Aplikasi</string>
+    <string name="herbal_image">Gambar Herbal</string>
+    <string name="herbal_name">Nama Herbal</string>
+    <string name="latin_name">(Nama Latin)</string>
+    <string name="herbal_description">Deskripsi Herbal</string>
+    <string name="local_name">Nama Lokal</string>
+    <string name="local_name_list">Bawang abang mirah (Aceh)\nPia (Batak)\nBawang abang (Palembang)\nBawang sirah, bambang sirah, dasun merah (Minangkabau)\n...</string>
+    <string name="full_description">Herba semusim, tidak berbatang. Daun tunggal memeluk umbi lapis. Umbi lapis menebal dan berdaging...</string>
+    <string name="utility">Bahan obat untuk mengatasi penyakit</string>
+    <string name="utility_list">• Batuk\n• Haid tidak teratur\n• Kencing manis\n• Obat cacing\n• Demam pada anak-anak (obat luar)\n• Perut kembung pada anak-anak (obat luar)</string>
+    <string name="composition">Komposisi</string>
+    <string name="composition_description">Minyak atsiri, sikloalin, metilalin, dihidroalin, flavonglikosida, kuersetin...</string>
+    <string name="classification_title">Rekomendasi herbal untuk kesehatanmu</string>
+    <string name="classification_description">Pilih salah satu kategori gejala yang kamu alami, dan kami akan membantu menemukan tanaman herbal yang sesuai dengan kebutuhan kesehatan kamu.</string>
+    <string name="internal_symptom">Gejala Sistem Internal</string>
+    <string name="external_symptom">Gejala Sistem Eksternal</string>
+    <string name="neural_symptom">Gejala Sistem Saraf dan Pernapasan</string>
+    <string name="next">Berikutnya</string>
+    <string name="symptom_description">Untuk membantu kami memberikan rekomendasi herbal yang lebih tepat, pilih gejala spesifik yang kamu alami dari kategori yang sudah dipilih sebelumnya.</string>
+    <string name="symptom">Gejala</string>
+    <string name="finish">Selesai</string>
+    <string name="recommendation_result">Selamat, hasil rekomendasi herbal untuk kamu sudah keluar!</string>
+    <string name="symptom_selected">Gejala Yang Kamu Pilih</string>
+    <string name="no_favorite">Tidak ada data favorit</string>
+    <string name="choose_category">Pilih salah satu kategori</string>
+    <string name="choose_symptom">Pilih gejala terlebih dahulu</string>
+    <string name="warning">Peringatan!</string>
+    <string name="warning_description">Perlu diingat, meskipun herbal memiliki manfaat kesehatan, penggunaannya harus tetap bijak dan sesuai anjuran. Jika kamu memiliki kondisi kesehatan tertentu atau sedang menjalani pengobatan, konsultasikan dengan tenaga medis sebelum menggunakan herbal ini.</string>
+    <string name="app_about_description">HerbaMate adalah aplikasi mobile yang dirancang untuk memberikan rekomendasi tanaman herbal berdasarkan gejala yang dialami pengguna, serta menyediakan informasi detail tentang tanaman herbal tersebut.\n\nAplikasi ini bertujuan untuk membantu masyarakat menemukan solusi pengobatan alternatif dengan memanfaatkan potensi tanaman herbal sebagai obat tradisional.\n\nFitur utama HerbaMate meliputi rekomendasi berbasis gejala, pencarian tanaman herbal, dan informasi lengkap mengenai manfaat serta cara penggunaan tanaman herbal.\n\nDengan HerbaMate, pengguna dapat mengakses solusi pengobatan alami yang lebih aman dan terpercaya.</string>
+    <string name="ok">OK</string>
 </resources>
