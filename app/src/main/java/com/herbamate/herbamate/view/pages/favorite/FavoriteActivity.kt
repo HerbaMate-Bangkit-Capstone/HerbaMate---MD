@@ -48,11 +48,6 @@ class FavoriteActivity : AppCompatActivity() {
 
         binding.rvHerbal.apply {
             layoutManager = LinearLayoutManager(this@FavoriteActivity)
-            addItemDecoration(
-                DividerItemDecoration(
-                    this@FavoriteActivity, LinearLayoutManager.VERTICAL
-                )
-            )
             adapter = favoriteAdapter
         }
 

@@ -31,7 +31,7 @@ class HomeViewModel(
                             name = it.name ?: "No Name Provides",
                             latinName = it.latinName ?: "No Latin Name Provides",
                             imageLink = it.imageLink ?: "https://i.stack.imgur.com/l60Hf.png",
-                            description = ""
+                            description = it.description ?: ""
                         )
                     }))
                 }

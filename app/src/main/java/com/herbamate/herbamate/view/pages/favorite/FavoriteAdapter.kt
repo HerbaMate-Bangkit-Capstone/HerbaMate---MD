@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.herbamate.herbamate.data.local.entity.Favorite
+import com.herbamate.herbamate.databinding.CardResultHerbsBinding
 import com.herbamate.herbamate.databinding.ItemHerbalBinding
 
 class FavoriteAdapter(private val onItemClicked: (Int) -> Unit) :
@@ -16,7 +17,7 @@ class FavoriteAdapter(private val onItemClicked: (Int) -> Unit) :
     ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemHerbalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = CardResultHerbsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -25,13 +26,15 @@ class FavoriteAdapter(private val onItemClicked: (Int) -> Unit) :
         holder.bind(favorite, onItemClicked)
     }
 
-    class ViewHolder(private val binding: ItemHerbalBinding) :
+    class ViewHolder(private val binding: CardResultHerbsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(favorite: Favorite, onItemClicked: (Int) -> Unit) {
-            binding.itemName.text = favorite.herbalName
-            binding.itemLatin.text = favorite.herbalLatin
-            binding.itemDescription.text = favorite.herbalDescription
-            Glide.with(binding.root.context).load(favorite.herbalImage).into(binding.itemImage)
+
+            binding.cardResultName.text = favorite.herbalName
+            binding.cardResultLatinName.text = favorite.herbalLatin
+            binding.cardResultDescription.text = favorite.herbalDescription
+
+            Glide.with(binding.root.context).load(favorite.herbalImage).into(binding.cardResultImage)
 
             binding.root.setOnClickListener {
                 onItemClicked(favorite.id)

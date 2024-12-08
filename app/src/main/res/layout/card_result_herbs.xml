@@ -1,53 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/example_onion" />
-        <Space
-            android:layout_width="16dp"
-            android:layout_height="0dp"/>
+        android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bawang Merah"
-                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                android:textStyle="bold" />
-           <Space
-               android:layout_width="match_parent"
-               android:layout_height="4dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="(Allium Cepa)"
-                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-                android:textStyle="italic" />
+            <ImageView
+                android:id="@+id/card_result_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/example_onion" />
             <Space
-                android:layout_width="match_parent"
-                android:layout_height="8dp"/>
-            <TextView
-                android:layout_width="match_parent"
+                android:layout_width="16dp"
+                android:layout_height="0dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="3"
-                android:ellipsize="end"
-                android:text="Herba semusim, tidak berbatang. Daun tunggal memeluk umbi lapis. Umbi lapis menebal dan berdaging, warna merah keputihan. Perbungaan berbentuk bongkol, mahkota bunga berbentuk bulat telur. Buah batu bulat, berwarna hijau. Biji segi tiga warna hitam. Bagian yang digunakan umbinya."
-                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                android:textStyle="italic" />
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/card_result_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bawang Merah"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    android:textStyle="bold" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"/>
+                <TextView
+                    android:id="@+id/card_result_latin_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(Allium Cepa)"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textStyle="italic" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+                <TextView
+                    android:id="@+id/card_result_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:text="Herba semusim, tidak berbatang. Daun tunggal memeluk umbi lapis. Umbi lapis menebal dan berdaging, warna merah keputihan. Perbungaan berbentuk bongkol, mahkota bunga berbentuk bulat telur. Buah batu bulat, berwarna hijau. Biji segi tiga warna hitam. Bagian yang digunakan umbinya."
+                    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                    android:textStyle="italic" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

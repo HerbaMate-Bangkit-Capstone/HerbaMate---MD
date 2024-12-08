@@ -13,8 +13,6 @@ import com.herbamate.herbamate.databinding.ActivityDetailBinding
 import com.herbamate.herbamate.model.Herb
 import com.herbamate.herbamate.utils.Result
 import com.herbamate.herbamate.utils.factory.ViewModelFactory
-import com.herbamate.herbamate.view.pages.favorite.FavoriteViewModel
-import com.herbamate.herbamate.view.pages.home.HomeViewModel
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -91,7 +89,7 @@ class DetailActivity : AppCompatActivity() {
                         name = result.data.name,
                         latinName = result.data.latinName,
                         imageLink = result.data.imageLink,
-                        description = ""
+                        description = result.data.description
                     )
                 }
             }
@@ -125,6 +123,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        binding.detailLayout.visibility = if (isLoading) View.GONE else View.VISIBLE
     }
 
     private fun obtainViewModel(context: Context): DetailViewModel {
