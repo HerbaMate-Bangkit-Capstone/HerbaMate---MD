@@ -9,6 +9,7 @@ import com.herbamate.herbamate.repository.HerbRepository
 import com.herbamate.herbamate.view.pages.detail.DetailViewModel
 import com.herbamate.herbamate.view.pages.favorite.FavoriteViewModel
 import com.herbamate.herbamate.view.pages.home.HomeViewModel
+import com.herbamate.herbamate.view.pages.result.ResultViewModel
 
 class ViewModelFactory private constructor(
     private val favoriteRepository: FavoriteRepository,
@@ -19,12 +20,17 @@ class ViewModelFactory private constructor(
         if (modelClass.isAssignableFrom(FavoriteViewModel::class.java)) {
             return FavoriteViewModel(favoriteRepository) as T
         }
+
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
             return DetailViewModel(herbRepository, favoriteRepository) as T
         }
 
         if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
             return HomeViewModel(herbRepository) as T
+        }
+
+        if (modelClass.isAssignableFrom(ResultViewModel::class.java)) {
+            return ResultViewModel(herbRepository) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)

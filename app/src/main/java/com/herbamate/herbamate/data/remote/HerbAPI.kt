@@ -5,6 +5,7 @@ import com.herbamate.herbamate.data.remote.response.HerbDetailResponse
 import com.herbamate.herbamate.data.remote.response.HerbResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 interface HerbAPI {
@@ -17,4 +18,8 @@ interface HerbAPI {
         @Path("id")  id : Int
     ) : BasicResDto<HerbDetailResponse>
 
+    @GET("/herbs/search")
+    suspend fun getSearchData (
+        @Query("q") q : String
+    ) : BasicResDto<List<HerbResponse>>
 }

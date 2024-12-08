@@ -14,4 +14,8 @@ class HerbRepository (private val api : HerbAPI) {
     suspend fun getHerbById (id : Int) : BasicResDto<HerbDetailResponse>{
         return  api.getHerbDetail(id)
     }
+
+    suspend fun getSearch (q : String) : BasicResDto<List<HerbResponse>> {
+        return api.getSearchData(q)
+    }
 }
