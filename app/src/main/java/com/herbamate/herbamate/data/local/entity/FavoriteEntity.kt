@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Entity
 @Parcelize
 data class Favorite(
-    @PrimaryKey(autoGenerate = false) val id: String,
+    @PrimaryKey(autoGenerate = false) val id: Int,
     val herbalName: String,
     val herbalLatin: String,
     val herbalDescription: String,

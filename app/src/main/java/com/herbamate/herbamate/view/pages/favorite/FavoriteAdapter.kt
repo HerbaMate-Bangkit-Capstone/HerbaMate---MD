@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.herbamate.herbamate.data.local.entity.Favorite
 import com.herbamate.herbamate.databinding.ItemHerbalBinding
 
-class FavoriteAdapter(private val onItemClicked: (String) -> Unit) :
+class FavoriteAdapter(private val onItemClicked: (Int) -> Unit) :
     ListAdapter<Favorite, FavoriteAdapter.ViewHolder>(
         DIFF_CALLBACK
     ) {
@@ -27,7 +27,7 @@ class FavoriteAdapter(private val onItemClicked: (String) -> Unit) :
 
     class ViewHolder(private val binding: ItemHerbalBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(favorite: Favorite, onItemClicked: (String) -> Unit) {
+        fun bind(favorite: Favorite, onItemClicked: (Int) -> Unit) {
             binding.itemName.text = favorite.herbalName
             binding.itemLatin.text = favorite.herbalLatin
             binding.itemDescription.text = favorite.herbalDescription

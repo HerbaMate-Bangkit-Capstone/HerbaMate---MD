@@ -61,7 +61,8 @@
                     android:src="@drawable/baseline_favorite_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#FF3B30" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView

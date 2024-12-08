@@ -20,7 +20,7 @@ class FavoriteRepository private constructor(
         }
     }
 
-    fun getFavoriteById(id: String): LiveData<Favorite> {
+    fun getFavoriteById(id: Int): LiveData<Favorite> {
         return favoriteDao.getFavoriteById(id)
     }
 

@@ -5,11 +5,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.herbamate.herbamate.di.Injection
 import com.herbamate.herbamate.repository.FavoriteRepository
+import com.herbamate.herbamate.repository.HerbRepository
 import com.herbamate.herbamate.view.pages.detail.DetailViewModel
 import com.herbamate.herbamate.view.pages.favorite.FavoriteViewModel
+import com.herbamate.herbamate.view.pages.home.HomeViewModel
 
 class ViewModelFactory private constructor(
     private val favoriteRepository: FavoriteRepository,
+    private val herbRepository: HerbRepository,
 ) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -17,7 +20,11 @@ class ViewModelFactory private constructor(
             return FavoriteViewModel(favoriteRepository) as T
         }
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
-            return DetailViewModel() as T
+            return DetailViewModel(herbRepository, favoriteRepository) as T
+        }
+
+        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
+            return HomeViewModel(herbRepository) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
@@ -28,7 +35,8 @@ class ViewModelFactory private constructor(
         private var instance: ViewModelFactory? = null
         fun getInstance(context: Context): ViewModelFactory = instance ?: synchronized(this) {
             instance ?: ViewModelFactory(
-                favoriteRepository = Injection.provideRepository(context)
+                favoriteRepository = Injection.provideFavoriteRepository(context),
+                herbRepository = Injection.providesHerbRepository()
             )
         }.also { instance = it }
     }

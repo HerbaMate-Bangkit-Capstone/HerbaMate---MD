@@ -1,18 +1,26 @@
 package com.herbamate.herbamate.view.pages.detail
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.herbamate.herbamate.R
+import com.herbamate.herbamate.data.local.entity.Favorite
 import com.herbamate.herbamate.databinding.ActivityDetailBinding
+import com.herbamate.herbamate.model.Herb
+import com.herbamate.herbamate.utils.Result
 import com.herbamate.herbamate.utils.factory.ViewModelFactory
 import com.herbamate.herbamate.view.pages.favorite.FavoriteViewModel
+import com.herbamate.herbamate.view.pages.home.HomeViewModel
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private lateinit var detailViewModel: DetailViewModel
-    private lateinit var favoriteViewModel: FavoriteViewModel
+    private lateinit var viewModel: DetailViewModel
+    private var favoriteHerb: Favorite? = null
+    private lateinit var currentHerb: Herb
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,77 +31,120 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+
         binding.toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        val factory = ViewModelFactory.getInstance(applicationContext)
-        detailViewModel = ViewModelProvider(this)[DetailViewModel::class.java]
-        favoriteViewModel = ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
+        viewModel = obtainViewModel(this)
 
-        val herbalId = intent.getStringExtra("HERBAL_ID") ?: ""
 
-        herbalId.let { id ->
-            favoriteViewModel.getFavorite(id).observe(this) { favorite ->
-                if (favorite == null) {
-                    binding.favoriteIcon.setImageResource(R.drawable.baseline_favorite_24)
-                } else {
-                    binding.favoriteIcon.setImageResource(R.drawable.baseline_favorite_border_24)
+        val herbalId = intent.getIntExtra(EXTRA_ID, -1)
+
+        if (savedInstanceState === null) {
+            viewModel.fetchDetailEvent(herbalId)
+        }
+
+        viewModel.herb.observe(this) { result ->
+            when (result) {
+                is Result.Error -> {
+                    showLoading(false)
+                    showErrorDialog(result.error)
                 }
 
-//                binding.favoriteIcon.setOnClickListener {
-//                    if (favorite == null) {
-//                        detailViewModel.detailHerbal.value?.let { herbal ->
-//                            favoriteViewModel.insertFavorite(
-//                                Favorite(
-//                                    id = id,
-//
-//                                )
-//                            )
-//                        }
-//                    } else {
-//                        favoriteViewModel.deleteFavorite(favorite)
-//                    }
-//                }
+                Result.Loading -> {
+                    showLoading(true)
+                }
+
+                is Result.Success -> {
+                    showLoading(false)
+                    binding.nameHerbal.text = result.data.name
+                    binding.herbalLatin.text = result.data.latinName
+
+                    Glide.with(this)
+                        .load(result.data.imageLink)
+                        .error(R.drawable.ic_place_holder)
+                        .into(binding.imageHerbal)
+                    var localNameMerge = ""
+                    for (i in 0..<result.data.localName.size) {
+                        if (i == result.data.localName.size - 1) {
+                            localNameMerge += result.data.localName[i]
+                            break
+                        }
+                        localNameMerge = localNameMerge + result.data.localName[i] + "\n"
+                    }
+                    binding.nameLocal.text = localNameMerge
+                    binding.descriptionHerbal.text = result.data.description
+                    var utilityHerbsMerge = ""
+                    for (i in 0..<result.data.disease.size) {
+                        if (i == result.data.disease.size - 1) {
+                            utilityHerbsMerge = utilityHerbsMerge + "• " + result.data.disease[i]
+                            break
+                        }
+                        utilityHerbsMerge = utilityHerbsMerge + "• " + result.data.disease[i] + "\n"
+                    }
+
+                    binding.descriptionUtility.text = utilityHerbsMerge
+                    binding.descriptionComposition.text = result.data.composition
+                    currentHerb = Herb(
+                        id = result.data.id,
+                        name = result.data.name,
+                        latinName = result.data.latinName,
+                        imageLink = result.data.imageLink,
+                        description = ""
+                    )
+                }
             }
         }
 
-        detailViewModel.fetchDetailEvent(herbalId)
+        viewModel.getIsFavoriteStatus(id = herbalId).observe(this) {
+            favoriteHerb = it
+            if (favoriteHerb == null) {
+                binding.favoriteIcon.setImageResource(R.drawable.baseline_favorite_border_24)
+                return@observe
+            }
+            binding.favoriteIcon.setImageResource(R.drawable.baseline_favorite_24)
+        }
 
-//        detailViewModel.detailHerbal.observe(this, { result ->
-//            when (result) {
-//                is Result.Loading -> {
-//                    showLoading(true)
-//                }
-//                is Result.Success -> {
-//                    showLoading(false)
-//                    binding.nameHerbal.text = result
-//                    binding.nameLokal.text = result
-//                    Glide.with(this)
-//                        .load(result)
-//                        .into(binding.imageHerbal)
-//                    binding.nameLokal.text = result
-//                    binding.descriptionHerbal.text = result
-//                    binding.descriptionUtility.text = result
-//                    binding.descriptionComposition.text = result
-//                }
-//                is Result.Error -> {
-//                    showLoading(false)
-//                    Toast.makeText(this, result.error, Toast.LENGTH_LONG).show()
-//                }
-//            }
-//        })
-//
-//        detailViewModel.isLoading.observe(this, { isLoading ->
-//            if (isLoading) {
-//                showLoading(true)
-//            } else {
-//                showLoading(false)
-//            }
-//        })
+        binding.favoriteIcon.setOnClickListener {
+            if (favoriteHerb == null) {
+                viewModel.insertFavoriteHerb(
+                    Favorite(
+                        id = currentHerb.id,
+                        herbalName = currentHerb.name,
+                        herbalLatin = currentHerb.latinName,
+                        herbalImage = currentHerb.imageLink,
+                        herbalDescription = currentHerb.description
+                    )
+                )
+                return@setOnClickListener
+            }
+            viewModel.deleteFavoriteHerb(favoriteHerb!!)
+        }
     }
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun obtainViewModel(context: Context): DetailViewModel {
+        val factory = ViewModelFactory.getInstance(context)
+        return ViewModelProvider(this, factory)[DetailViewModel::class.java]
+    }
+
+    private fun showErrorDialog(message: String, onFinish: () -> Unit = { finish() }) {
+        AlertDialog.Builder(this).apply {
+            setTitle(resources.getString(R.string.error))
+            setMessage(message)
+            setPositiveButton(resources.getString(R.string.okay)) { _, _ ->
+                onFinish()
+            }
+            create()
+            show()
+        }
+    }
+
+    companion object {
+        const val EXTRA_ID = "id"
     }
 }

@@ -33,7 +33,7 @@ class FavoriteViewModel(
         favoriteRepository.delete(favorite)
     }
 
-    fun getFavorite(id: String): LiveData<Favorite> {
+    fun getFavorite(id: Int): LiveData<Favorite> {
         return favoriteRepository.getFavoriteById(id)
     }
 }

@@ -4,6 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+    <string name="okay">Okay</string>
+    <string name="error">Error</string>
+
     <string name="title_recommendation">Rekomendasi</string>
     <string name="title_setting">Pengaturan</string>
     <string name="desc_recommendation1">Temukan solusi herbal yang tepat untuk kesehatan kamu!</string>

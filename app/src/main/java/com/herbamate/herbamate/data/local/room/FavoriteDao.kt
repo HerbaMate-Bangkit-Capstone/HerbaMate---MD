@@ -16,5 +16,5 @@ interface FavoriteDao {
     fun getAllFavorites(): LiveData<List<Favorite>>
 
     @Query("SELECT * FROM Favorite WHERE id = :id LIMIT 1")
-    fun getFavoriteById(id: String): LiveData<Favorite>
+    fun getFavoriteById(id: Int): LiveData<Favorite>
 }

@@ -41,7 +41,7 @@ class FavoriteActivity : AppCompatActivity() {
         )[FavoriteViewModel::class.java]
         favoriteAdapter = FavoriteAdapter { herbalId ->
             val intent = Intent(this, DetailActivity::class.java).apply {
-                putExtra(HERBAL_ID, herbalId)
+                putExtra(DetailActivity.EXTRA_ID, herbalId)
             }
             startActivity(intent)
         }
