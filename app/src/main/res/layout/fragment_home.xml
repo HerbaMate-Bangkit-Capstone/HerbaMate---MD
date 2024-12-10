@@ -41,6 +41,7 @@
                   android:layout_height="match_parent"
                   android:layout_weight="1"/>
               <ImageButton
+                  android:id="@+id/favorite_button"
                   android:layout_width="48dp"
                   android:layout_height="48dp"
                   android:layout_gravity="center_vertical"

@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.herbamate.herbamate.R
 import com.herbamate.herbamate.databinding.ActivitySymptomCategoryBinding
-import com.herbamate.herbamate.view.pages.checker.SymptomCheckerActivity
+import com.herbamate.herbamate.view.pages.symptom_checker.SymptomCheckerActivity
 
 class SymptomCategoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySymptomCategoryBinding

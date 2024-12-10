@@ -46,7 +46,6 @@
         android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/eight"
-        android:maxLines="3"
         android:text="@string/herbal_description"
         android:textColor="@color/black"
         android:textSize="12sp"

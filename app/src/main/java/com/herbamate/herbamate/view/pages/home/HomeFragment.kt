@@ -23,6 +23,7 @@ import com.herbamate.herbamate.databinding.FragmentHomeBinding
 import com.herbamate.herbamate.utils.Result
 import com.herbamate.herbamate.utils.factory.ViewModelFactory
 import com.herbamate.herbamate.view.pages.detail.DetailActivity
+import com.herbamate.herbamate.view.pages.favorite.FavoriteActivity
 import com.herbamate.herbamate.view.pages.result.ResultActivity
 
 class HomeFragment : Fragment() {
@@ -50,7 +51,10 @@ class HomeFragment : Fragment() {
         binding.rvHomeHerbs.layoutManager = GridLayoutManager(requireActivity(), 2)
         binding.rvHomeHerbs.isNestedScrollingEnabled = false
 
-
+        binding.favoriteButton.setOnClickListener {
+            val intent = Intent(activity?.baseContext, FavoriteActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.cardFeature.setOnClickListener {
             val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.nav_view)

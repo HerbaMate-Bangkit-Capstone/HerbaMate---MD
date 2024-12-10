@@ -25,7 +25,7 @@
             android:exported="false"
             />
         <activity
-            android:name=".view.pages.checker.SymptomCheckerActivity"
+            android:name=".view.pages.symptom_checker.SymptomCheckerActivity"
             android:exported="false"
            />
         <activity

@@ -1,7 +1,8 @@
-package com.herbamate.herbamate.view.pages.checker
+package com.herbamate.herbamate.view.pages.symptom_checker
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import android.widget.LinearLayout
