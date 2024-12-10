@@ -60,11 +60,11 @@ Ensure compliance with this folder structure to facilitate development, maintena
 ## Tech Stack
 This project is using several technology such as
 
-1. **Retrofit:** Library that used to fetch the data from the api
+1. **Kotlin:** Programming Language that been used to develop this application
+   
+2. **Retrofit:** Library that used to fetch the data from the api
 
-2. **Room:** Library that used to store data to local database storage
-
-3. **Glide:** Library that used to show the network image
+3. **Room:** Library that used to store data to local database storage
 
 
 ## License
