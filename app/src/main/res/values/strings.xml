@@ -46,4 +46,28 @@
     <string name="warning_description">Perlu diingat, meskipun herbal memiliki manfaat kesehatan, penggunaannya harus tetap bijak dan sesuai anjuran. Jika kamu memiliki kondisi kesehatan tertentu atau sedang menjalani pengobatan, konsultasikan dengan tenaga medis sebelum menggunakan herbal ini.</string>
     <string name="app_about_description">HerbaMate adalah aplikasi mobile yang dirancang untuk memberikan rekomendasi tanaman herbal berdasarkan gejala yang dialami pengguna, serta menyediakan informasi detail tentang tanaman herbal tersebut.\n\nAplikasi ini bertujuan untuk membantu masyarakat menemukan solusi pengobatan alternatif dengan memanfaatkan potensi tanaman herbal sebagai obat tradisional.\n\nFitur utama HerbaMate meliputi rekomendasi berbasis gejala, pencarian tanaman herbal, dan informasi lengkap mengenai manfaat serta cara penggunaan tanaman herbal.\n\nDengan HerbaMate, pengguna dapat mengakses solusi pengobatan alami yang lebih aman dan terpercaya.</string>
     <string name="ok">OK</string>
+    <string name="search">Pencarian</string>
+    <string name="not_found_illustration">Ilustrasi Not Found</string>
+    <string name="data_not_found">Data tidak ditemukan</string>
+    <string name="herbs_image">Foto Herbal</string>
+    <string name="favorite_page">Halaman Favorite</string>
+    <string name="home_title_feature">Fitur Kami</string>
+    <string name="home_title_feature_card">Cari Herbal Yang Cocok</string>
+    <string name="home_description_feature_card">Ayo cari herbal yang cocok dari gejala penyakit yang kamu alami !</string>
+    <string name="herbal">Herbal</string>
+
+    <string name="headache">SakitKepala</string>
+    <string name="nauseous">Mual</string>
+    <string name="muscle_pain">Nyeri otot</string>
+    <string name="fever">Demam</string>
+    <string name="cough">Batuk</string>
+    <string name="tired">Lelah</string>
+    <string name="bloating">Kembung</string>
+    <string name="cramps">Kram</string>
+
+    <string name="dizzy">Pusing</string>
+    <string name="dry_throat">Tenggorokan kering</string>
+    <string name="stomach_ache">Sakit Perut</string>
+    <string name="cold">Pilek</string>
+
 </resources>

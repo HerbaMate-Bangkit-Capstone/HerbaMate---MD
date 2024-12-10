@@ -17,8 +17,8 @@
                 android:id="@+id/card_grid_herb_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:contentDescription="@string/herbs_image"
                 android:scaleType="centerCrop"
-                android:clipToOutline="true"
                 android:src="@drawable/example_onion"
                 android:adjustViewBounds="true"/>
             <LinearLayout
@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                    android:text="Bawang Merah"
+                    android:text="@string/herbal_name"
                     android:maxLines="1"/>
                 <TextView
                     android:id="@+id/card_grid_herb_latin_name"
@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                     android:textStyle="italic"
-                    android:text="Allium cepa"
+                    android:text="@string/latin_name"
                     android:maxLines="1"/>
             </LinearLayout>
 

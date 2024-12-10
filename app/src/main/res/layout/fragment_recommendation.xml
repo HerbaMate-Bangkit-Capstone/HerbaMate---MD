@@ -11,6 +11,18 @@
         android:orientation="vertical"
         android:padding="@dimen/padding">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_recommendation"
+            style="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textStyle="bold"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"/>
+
         <ImageView
             android:id="@+id/image_flower"
             android:layout_width="match_parent"

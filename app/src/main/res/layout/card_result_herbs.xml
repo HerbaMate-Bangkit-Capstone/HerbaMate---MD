@@ -31,7 +31,7 @@
                     android:id="@+id/card_result_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bawang Merah"
+                    android:text="@string/herbal_name"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                     android:textStyle="bold" />
                 <Space
@@ -41,7 +41,7 @@
                     android:id="@+id/card_result_latin_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="(Allium Cepa)"
+                    android:text="@string/latin_name"
                     android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                     android:textStyle="italic" />
                 <Space
@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="3"
                     android:ellipsize="end"
-                    android:text="Herba semusim, tidak berbatang. Daun tunggal memeluk umbi lapis. Umbi lapis menebal dan berdaging, warna merah keputihan. Perbungaan berbentuk bongkol, mahkota bunga berbentuk bulat telur. Buah batu bulat, berwarna hijau. Biji segi tiga warna hitam. Bagian yang digunakan umbinya."
+                    android:text="@string/herbal_description"
                     android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                     android:textStyle="italic" />
             </LinearLayout>

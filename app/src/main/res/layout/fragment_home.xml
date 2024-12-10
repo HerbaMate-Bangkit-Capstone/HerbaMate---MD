@@ -32,7 +32,7 @@
               <TextView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="HerbaMate"
+                  android:text="@string/app_name"
                   android:textColor="@color/white"
                   android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                   android:textStyle="bold"/>
@@ -46,7 +46,7 @@
                   android:layout_height="48dp"
                   android:layout_gravity="center_vertical"
                   android:background="@null"
-                  android:contentDescription="Favorite Page"
+                  android:contentDescription="@string/favorite_page"
                   android:src="@drawable/baseline_favorite_24"
                   app:tint="@color/white" />
           </LinearLayout>
@@ -68,7 +68,7 @@
               android:inputType="text"
               android:maxLines="1"
               android:background="@color/white"
-              android:hint="Pencarian"
+              android:hint="@string/search"
               app:layout_constraintTop_toBottomOf="@id/home_spacer_action_bar_and_search"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_marginTop="16dp"
-              android:text="Fitur Kami"
+              android:text="@string/home_title_feature"
               android:textColor="@color/white"
               android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
               android:textStyle="bold"
@@ -126,7 +126,7 @@
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                          android:text="Cari Herbal Yang Cocok"
+                          android:text="@string/home_title_feature_card"
                           />
 
                       <TextView
@@ -134,7 +134,7 @@
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                          android:text="Ayo cari herbal yang cocok dari gejala penyakit yang kamu alami !"
+                          android:text="@string/home_description_feature_card"
                           />
                   </LinearLayout>
 
@@ -146,7 +146,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_marginTop="16dp"
-              android:text="Herbal"
+              android:text="@string/herbal"
               android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
               android:textStyle="bold"
               app:layout_constraintTop_toBottomOf="@id/card_feature"

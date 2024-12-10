@@ -37,29 +37,36 @@ class SymptomCheckerActivity : AppCompatActivity() {
 
         val symptoms = when (category) {
             "internal" -> listOf(
-                "Sakit kepala", "Mual", "Nyeri otot", "Demam", "Batuk", "Lelah", "Kembung", "Kram"
+                getString(R.string.headache),
+                getString(R.string.nauseous),
+                getString(R.string.muscle_pain),
+                getString(R.string.fever),
+                getString(R.string.cough),
+                getString(R.string.tired),
+                getString(R.string.bloating),
+                getString(R.string.cramps)
             )
 
             "external" -> listOf(
-                "Pusing",
-                "Tenggorokan kering",
-                "Sakit perut",
-                "Batuk",
-                "Pilek",
-                "Lelah",
-                "Mual",
-                "Sakit kepala"
+                getString(R.string.dizzy),
+                getString(R.string.dry_throat),
+                getString(R.string.stomach_ache),
+                getString(R.string.cough),
+                getString(R.string.cold),
+                getString(R.string.tired),
+                getString(R.string.nauseous),
+                getString(R.string.headache)
             )
 
             "neural" -> listOf(
-                "Kram",
-                "Sakit perut",
-                "Lelah",
-                "Nyeri otot",
-                "Demam",
-                "Pusing",
-                "Batuk",
-                "Tenggorokan kering"
+                getString(R.string.cramps),
+                getString(R.string.stomach_ache),
+                getString(R.string.tired),
+                getString(R.string.muscle_pain),
+                getString(R.string.fever),
+                getString(R.string.dizzy),
+                getString(R.string.cough),
+                getString(R.string.dry_throat)
             )
 
             else -> listOf()

@@ -27,13 +27,14 @@
                 android:id="@+id/result_search_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:drawableStart="@drawable/baseline_search_24"
                 android:paddingVertical="12dp"
                 android:paddingHorizontal="16dp"
                 android:inputType="text"
                 android:maxLines="1"
                 android:background="@drawable/border_bg"
-                android:hint="Pencarian"/>
+                android:hint="@string/search"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -73,6 +74,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/not_found_illustration"
                         android:src="@drawable/not_found"/>
                     <Space
                         android:layout_width="match_parent"
@@ -80,7 +82,7 @@
                     <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Data tidak ditemukan"
+                    android:text="@string/data_not_found"
                     style="@style/TextAppearance.Material3.TitleLarge"
                     android:textAlignment="center"/>
 
