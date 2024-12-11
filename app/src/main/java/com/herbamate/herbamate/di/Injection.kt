@@ -65,7 +65,7 @@ object Injection {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://herbamate-recommed-664546579058.asia-southeast2.run.app")
+            .baseUrl("https://herbamate-predict-664546579058.asia-southeast2.run.app")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

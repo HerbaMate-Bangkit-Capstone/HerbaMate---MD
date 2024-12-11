@@ -12,7 +12,7 @@ class RecommendationRepository(
         var raw = ""
         for (i in symptoms.indices) {
             if (i == (symptoms.size - 1)) {
-                raw += symptoms
+                raw += symptoms[i]
                 break
             }
             raw = raw + symptoms[i] + ", "

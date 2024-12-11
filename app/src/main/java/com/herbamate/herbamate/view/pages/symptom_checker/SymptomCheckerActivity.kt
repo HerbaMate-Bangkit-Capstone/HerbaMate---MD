@@ -2,7 +2,6 @@ package com.herbamate.herbamate.view.pages.symptom_checker
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import android.widget.LinearLayout
@@ -99,7 +98,23 @@ class SymptomCheckerActivity : AppCompatActivity() {
             for (i in 0 until symptomsLayout.childCount) {
                 val child = symptomsLayout.getChildAt(i)
                 if (child is CheckBox && child.isChecked) {
-                    selectedSymptoms.add(child.text.toString())
+                    selectedSymptoms.add(
+                        when (child.text) {
+                            getString(R.string.headache) -> "Sakit kepala"
+                            getString(R.string.nauseous) -> "Mual"
+                            getString(R.string.muscle_pain) -> "Nyeri otot"
+                            getString(R.string.fever) -> "Demam"
+                            getString(R.string.cough) -> "Batuk"
+                            getString(R.string.tired) -> "Lelah"
+                            getString(R.string.bloating) -> "Kembung"
+                            getString(R.string.cramps) -> "Kram"
+                            getString(R.string.dizzy) -> "Pusing"
+                            getString(R.string.dry_throat) -> "Tenggorokan kering"
+                            getString(R.string.stomach_ache) -> "Sakit perut"
+                            getString(R.string.cold) -> "Pilek"
+                            else -> ""
+                        }
+                    )
                 }
             }
 
